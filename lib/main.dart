@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:news_nti/screens/home_screen.dart';
+import 'package:news_nti/features/categories/presentation/views/categories_view.dart';
 
 void main() {
   runApp(const MyApp());
@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: const HomeScreen(),
+      home: const CategoriesView(),
     );
   }
 }

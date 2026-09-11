@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:news_nti/model/news_model.dart';
+import 'package:news_nti/features/news/data/models/news_model.dart';
 
-class NewsScreen extends StatelessWidget {
-  NewsScreen({super.key});
+class NewsView extends StatelessWidget {
+  NewsView({super.key});
 
   final List<NewsModel> news = [
     NewsModel(

@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:news_nti/model/item_model.dart';
-import 'package:news_nti/screens/news_screen.dart';
+import 'package:news_nti/features/news/presentation/views/news_view.dart';
+import 'package:news_nti/features/categories/data/models/item_model.dart';
 
-class HomeScreen extends StatelessWidget {
-  const HomeScreen({super.key});
+class CategoriesView extends StatelessWidget {
+  const CategoriesView({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -68,7 +68,7 @@ class HomeScreen extends StatelessWidget {
                     onTap: () {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => NewsScreen()),
+                        MaterialPageRoute(builder: (context) => NewsView()),
                       );
                     },
                     child: CustomContainer(
