@@ -1,4 +1,9 @@
+import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:news_nti/core/network/api_service.dart';
+import 'package:news_nti/features/news/data/repo/news_repo_impl.dart';
+import 'package:news_nti/features/news/presentation/view_model/news_cubit.dart';
 import 'package:news_nti/features/news/presentation/views/news_view.dart';
 import 'package:news_nti/features/categories/data/models/item_model.dart';
 
@@ -68,7 +73,14 @@ class CategoriesView extends StatelessWidget {
                     onTap: () {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => NewsView()),
+                        MaterialPageRoute(
+                          builder: (context) => BlocProvider(
+                            create: (context) =>
+                                NewsCubit(NewsRepoImpl(ApiService(Dio())))
+                                  ..getNews('sports'),
+                            child: const NewsView(categoryId: 'sports'),
+                          ),
+                        ),
                       );
                     },
                     child: CustomContainer(
